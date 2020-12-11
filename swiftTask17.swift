@@ -30,26 +30,26 @@ enum Area {
 }
 
 protocol AnimalProtocol {
-  var name: String { get set }
+  var name: String { get }
   var sex: Sex { get }
   var size: Size { get }
   var diet: Diet { get }
   var area: Area { get }
-  var weight: Double { get set }
-  var age: Int { get set }
-  var lags: Int { get set }
+  var weight: Double { get }
+  var age: Int { get }
+  var lags: Int { get }
   func printAnimalDescription()
 }
 
 class Animal: AnimalProtocol {
-    var name: String
+    let name: String
     let sex: Sex
     let size: Size
     let diet: Diet
     let area: Area
-    var weight: Double
-    var age: Int
-    var lags: Int
+    let weight: Double
+    let age: Int
+    let lags: Int
 
   init(name: String, sex: Sex, size: Size, diet: Diet, area: Area, weight: Double, age: Int, lags: Int) {
         self.name = name

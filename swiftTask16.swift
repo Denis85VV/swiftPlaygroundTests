@@ -1,15 +1,16 @@
-import UIKit
-
 // Создать функцию, на вход пойдёт массив строк. Функция должна возвращать массив строк без дубликатов.
 
-func uniqueArray(array: [String]) -> [String] {
-  var unique:[String] = []
-  for word in array {
+import UIKit
+
+func uniqueArray(set: Set<String>) -> Set<String> { // заменл массив на множество
+  var unique: Set<String> = []
+  for word in set {
     if let _ = unique.filter({$0 == word}).first {
     } else {
-      unique.append(word)
+      unique.insert(word)
     }
   }
   return unique
 }
-print(uniqueArray(array: ["синий", "желтый", "синий", "желтый", "красный", "синий"]))
+
+print(uniqueArray(set: ["синий", "желтый", "синий", "желтый", "красный", "синий"]))
